@@ -61,8 +61,10 @@ class HBBK_API
      */
     public static function getTimetable(String $week, String $class){
         global $username;
+        global $week, $class, $url;
         $week = self::getWeek($week);
         $class = self::getClassNum($class);
+
 
         $url = 'http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/'.$week.'/c/c00'.$class.'.htm';
 
@@ -121,7 +123,7 @@ class HBBK_API
                 $week = date("W");
                 break;
         }
-        return $week;
+        return self::addLeadingZero($week);
     }
 
     /**
@@ -147,8 +149,37 @@ class HBBK_API
      * @param $html
      * @return mixed
      */
-    public static function parseHTML($html){
+    private static function parseHTML($html){
         //TODO: Parse $html and return a JSONified String of it
         return $html;
+    }
+
+    private static function addLeadingZero(String $int){
+        $int = (string) $int;
+        while (strlen($int) < 2){
+            $int = "0".$int;
+        }
+        return $int;
+    }
+
+    /**
+     * @return string
+     */
+    public static function debug(){
+        global $username, $week, $class, $url;
+        $debug = '{ "API":"2016-01-14/1", "debug":"[{
+        "username":"'.$username.'",
+        "week":"'.$week.'",
+        "class":"'.$class.'",
+        "url":"'.$url.'"
+        }]" }';
+        return $debug;
+    }
+
+    /**
+     *
+     */
+    public static function toString(){
+
     }
 }
