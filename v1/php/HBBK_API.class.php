@@ -26,9 +26,7 @@ class HBBK_API
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
         rtrim($fields_string, '&');
 
-        //open connection
         $ch = curl_init();
-        //set the url, number of POST vars, POST data
         curl_setopt($ch,CURLOPT_URL, 'http://hbbk-ilias.de/ilias.php?lang=de&cmd=post&cmdClass=ilstartupgui&cmdNode=99&baseClass=ilStartUpGUI&rtoken=');
         curl_setopt($ch,CURLOPT_POST, count($fields));
         curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
@@ -37,11 +35,11 @@ class HBBK_API
         $result = curl_exec($ch);
         curl_close($ch);
 
-        $cr = curl_init('http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/default.htm');
-        curl_setopt($cr, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($cr, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
-        $timetable = curl_exec($cr);
-        curl_close($cr);
+        $ch = curl_init('http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/default.htm');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
+        $timetable = curl_exec($ch);
+        curl_close($ch);
 
         $falseString = 'Authentication failed. Please <a href="login.php?target=&client_id=HBSeLearn&auth_stat=">click here</a> to continue.';
 
@@ -54,11 +52,11 @@ class HBBK_API
 
         $url = 'http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/'.$week.'/c/c00'.$class.'.htm';
 
-        $cr = curl_init($url);
-        curl_setopt($cr, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($cr, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
-        $timetable = curl_exec($cr);
-        curl_close($cr);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
+        $timetable = curl_exec($ch);
+        curl_close($ch);
 
         $timetable = self::parseHTML($timetable);
 
@@ -67,11 +65,11 @@ class HBBK_API
 
     public static function logout(){
         global $username;
-        $cx = curl_init('http://hbbk-ilias.de/logout.php?lang=de');
-        curl_setopt($cx, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($cx, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
-        $logout = curl_exec($cx);
-        curl_close($cx);
+        $ch = curl_init('http://hbbk-ilias.de/logout.php?lang=de');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
+        $logout = curl_exec($ch);
+        curl_close($ch);
 
         unlink('userData/cookies/cookie-'.$username.'.txt');
     }
