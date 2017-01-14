@@ -12,7 +12,8 @@ You can make calls to the API by navigating your browser to https://hbbk.radon.c
 | week      	| The Week you want the Timetalble of                          	| "-1" or "prev" for the previous week; "0" or "this" for this week; "1" or "next" for the next week 	| 2017-01-14/1 	|
 | class     	| The Class you want the Timetable of                          	| Your Classes UID (001..140) or your Classes Name (e.g. GIA2A or GYM2A)                             	| 2017-01-14/1 	|
 
-So that in the end, the URL looks like this: https://hbbk.radon.cloud/v1/?username=YOUR_USERNAME&password=YOUR_PASSWORD&week=next&class=GIA2A 
+So that in the end, the URL looks like this: https://hbbk.radon.cloud/v1/?username=YOUR_USERNAME&password=YOUR_PASSWORD&week=next&class=GIA2A
+You may leave out week entirely if you wish to get the current timetable.
 
 
 ### Installation
