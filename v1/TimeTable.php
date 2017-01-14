@@ -24,8 +24,8 @@ if (isset($username, $class, $password, $week)){
         $timetable = $ilias::getTimetable($week, $class);
         echo $timetable;
     }
-    else echo "{ \"API\":\"2016-01-14/1\", \"msg\":\"Authentication failed.\" }";
+    else echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"Authentication failed.\" }";
 }
 else {
-    echo "{ \"API\":\"2016-01-14/1\", \"msg\":\"All GET Parameters must be set, please review the documentation.\" }";
+    echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"All GET Parameters must be set, please review the documentation.\" }";
 }

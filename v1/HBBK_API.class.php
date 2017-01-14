@@ -167,7 +167,7 @@ class HBBK_API
      */
     public static function debug(){
         global $username, $week, $class, $url;
-        $debug = '{ "API":"2016-01-14/1", "debug":"[{
+        $debug = '{ "API":"2017-01-14/1", "debug":"[{
         "username":"'.$username.'",
         "week":"'.$week.'",
         "class":"'.$class.'",

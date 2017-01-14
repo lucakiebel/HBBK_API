@@ -52,7 +52,7 @@ elseif (array_key_exists($class, $classes)){
     test($week, $class, $username, $password);
 }
 else{
-    $error_msg = '{ "API":"2016-01-14/1", "msg":"Class not found" }';
+    $error_msg = '{ "API":"2017-01-14/1", "msg":"Class not found" }';
     echo $error_msg;
 }
 
@@ -95,7 +95,7 @@ function test($week, $class, $username, $password){
     $falseString = 'Authentication failed. Please <a href="login.php?target=&client_id=HBSeLearn&auth_stat=">click here</a> to continue.';
 
     if ($timetable == $falseString){
-        echo "{ \"API\":\"2016-01-14/1\", \"msg\":\"Authentication failed.\" }";
+        echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"Authentication failed.\" }";
     }
     else echo $timetable;
 }
