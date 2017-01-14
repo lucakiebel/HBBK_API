@@ -137,21 +137,18 @@ class HBBK_API
         if (array_key_exists($class, $classesTurned)) {
             $class = $classesTurned[$class];
             return (string) $class;
-
-        }
-        elseif (array_key_exists($class, $classes)){
+        } elseif (array_key_exists($class, $classes)){
             return (string) $class;
-        }
-        return null;
+        }return null;
     }
 
     /**
      * @param $html
-     * @return mixed
+     * @return String
      */
-    private static function parseHTML($html){
+    private static function parseHTML(String $html){
         //TODO: Parse $html and return a JSONified String of it
-        return $html;
+        return (string) $html;
     }
 
     private static function addLeadingZero(String $int){
