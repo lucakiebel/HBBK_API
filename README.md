@@ -4,12 +4,14 @@ This API can be used to get your current timetable from hbbk-ilias.de without ne
 
 ### Usage
 You can make calls to the API by navigating your browser to https://hbbk.radon.cloud/v1/ and giving it the following GET parameters:
-| Parameter | Description | From Version |
-|---|---|---|
-| username  | Your Username with hbbk-ilias.de so you can be authenticated | 2017-01-14/1 |
-| password  | Your Password with hbbk-ilias.de so you can be authenticated | 2017-01-14/1 |
-| week      | The Week you want the Timetalble of, this could be -1 or "prev" for last week, 0 or "this" for this week and 1 or "next" for, you guessed it, next week. If you leave it out, the API will default to "this" | 2017-01-14/1 |
-| class     | The Class you want the Timetable of, this could either be your UID, ranging from 000 to 140 or your classes Name (e.g. GIA1A or GYM1B) | 2017-01-14/1 |
+
+| Parameter 	| Description                                                  	|                                           Possible Value                                           	| From Version 	|
+|:---------:	|--------------------------------------------------------------	|:--------------------------------------------------------------------------------------------------:	|:------------:	|
+| username  	| Your Username with hbbk-ilias.de so you can be authenticated 	| YOUR_USERNAME                                                                                      	| 2017-01-14/1 	|
+| password  	| Your Password with hbbk-ilias.de so you can be authenticated 	| YOUR_PASSWORD                                                                                      	| 2017-01-14/1 	|
+| week      	| The Week you want the Timetalble of                          	| "-1" or "prev" for the previous week; "0" or "this" for this week; "1" or "next" for the next week 	| 2017-01-14/1 	|
+| class     	| The Class you want the Timetable of                          	| Your Classes UID (001..140) or your Classes Name (e.g. GIA2A or GYM2A)                             	| 2017-01-14/1 	|
+
 
 
 ### Installation
