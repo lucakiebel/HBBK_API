@@ -10,11 +10,11 @@ class HBBK_API
 {
     /**
      * HBBK_API constructor.
-     * @param String $user
+     * @param String $username
      */
-    public function __construct(String $user){
+    public function __construct(String $username){
         global $username;
-        $username = $user;
+        $this->$username = $username;
     }
 
     /**
