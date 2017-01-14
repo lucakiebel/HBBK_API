@@ -15,10 +15,10 @@ class HBBK_API
 
     public static function authenticate(String $password){
         global $username;
-        $fields = array(
+        $fields = [
             'username' => $username,
             'password' => $password
-        );
+        ];
 
         $fields_string = '';
 
