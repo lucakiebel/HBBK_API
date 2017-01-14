@@ -55,9 +55,6 @@ if (isset($week, $class, $username, $password)){
 
 }
 else {
-    $error_msg = '{
-        "API_Version":"2016-01-14/1",
-        "Error_Message":"Could not Authenticate with Ilias"
-    }';
+    $error_msg = '{ "API":"2016-01-14/1", "error_msg":"Could not Authenticate with Ilias" }';
     echo $error_msg;
 }
