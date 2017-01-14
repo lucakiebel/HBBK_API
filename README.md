@@ -1,0 +1,3 @@
+# HBBK Stundenplan API
+
+~~~ TODO ~~~
