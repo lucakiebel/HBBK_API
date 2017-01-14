@@ -18,7 +18,7 @@ You may leave out week entirely if you wish to get the current timetable.
 
 ### Installation
 ```sh
-$ git clone https://github.com/lucakiebel/HBBK_API/master.git
+$ git clone https://github.com/lucakiebel/HBBK_API.git
 $ sudo mv HBBK_API/ /var/www/html/ 
 ```
 
