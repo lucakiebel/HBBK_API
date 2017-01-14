@@ -9,6 +9,10 @@
 class HBBK_API
 {
     public static function authenticate(String $username, String $password){
+
+    }
+
+    public static function getTimetable(String $username, String $week, int $class){
         
     }
 }
