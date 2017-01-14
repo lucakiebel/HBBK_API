@@ -6,6 +6,7 @@
  * Time: 18:03
  */
 
+
 //filter the input for authenticating and choosing the timetable
 $week = filter_input(INPUT_GET, 'week', FILTER_SANITIZE_STRING);
 $week = (string) $week;
@@ -93,5 +94,6 @@ function test($week, $class, $username, $password){
 
     var_dump($timetable);
 }
+
 
 
