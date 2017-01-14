@@ -2,23 +2,9 @@
 
 This API can be used to get your current timetable from hbbk-ilias.de without needing to do all the logging in and choosing your schedule and so on, in short, it saves to time and hassle with the other current methods and is completely free of ads 🤑 🤑 🤑.
 
-### Tech
-
-Dillinger uses a number of open source projects to work properly:
-
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [keymaster.js] - awesome keyboard handler lib by [@thomasfuchs]
-* [jQuery] - duh
-
 ### Usage
 You can make calls to the API by navigating your browser to https://hbbk.radon.cloud/v1/ and giving it the following GET parameters:
-| Parameter | Description | From Version |                                                                                                                                                                                                  
+| Parameter | Description | From Version |
 |---|---|---|
 | username  | Your Username with hbbk-ilias.de so you can be authenticated | 2017-01-14/1 |
 | password  | Your Password with hbbk-ilias.de so you can be authenticated | 2017-01-14/1 |
