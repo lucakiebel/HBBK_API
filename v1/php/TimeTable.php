@@ -22,7 +22,7 @@ if (isset($username, $class, $password, $week)){
     //authenticate the User with Ilias, if password is correct, proceed
     if ($ilias::authenticate($password)){
         $timetable = $ilias::getTimetable($week, $class);
-        var_dump($timetable);
+        echo $timetable;
     }
     else echo "{ \"API\":\"2016-01-14/1\", \"msg\":\"Authentication failed.\" }";
 }
