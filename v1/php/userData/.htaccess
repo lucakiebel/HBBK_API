@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "User Data Cannot Be Accessed via Browser"
+AuthUserFile .htpasswd
+Require valid-user

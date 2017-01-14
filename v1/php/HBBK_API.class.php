@@ -58,4 +58,15 @@ class HBBK_API
         $timetable = curl_exec($cr);
         curl_close($cr);
     }
+
+    public static function logout(){
+        global $username;
+        $cx = curl_init('http://hbbk-ilias.de/logout.php');
+        curl_setopt($cx, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($cx, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
+        $logout = curl_exec($cx);
+        curl_close($cx);
+
+        unlink('userData/cookies/cookie-'.$username.'.txt');
+    }
 }
