@@ -16,6 +16,10 @@ So that in the end, the URL looks like this: https://hbbk.radon.cloud/v1/?userna
 You may leave out week entirely if you wish to get the current timetable.
 
 
+### Reporting Issues & Requesting Features
+If you find any Errors when using the API or want to request a Feature, you can do so by opening an [Issue](https://github.com/lucakiebel/HBBK_API/issues). Please include as much information as possible! 💻
+
+
 ### Installation
 Read the [Installation Docs](https://github.com/lucakiebel/HBBK_API/blob/website/README.md) in the Website branch.
 
