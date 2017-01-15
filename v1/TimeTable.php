@@ -45,7 +45,7 @@ $class = (string) filter_input(INPUT_GET, 'class');
 $username = filter_input(INPUT_GET, 'username');
 $password = filter_input(INPUT_GET, 'password');
 
-if (isset($username, $class, $password, $week)){
+if (isset($username, $class, $password)){
 
     //create a new Instance of the API, set the Username
     $ilias = new HBBK_API($username);
@@ -55,8 +55,8 @@ if (isset($username, $class, $password, $week)){
         $timetable = $ilias::getTimetable($week, $class);
         echo $timetable;
     }
-    else echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"Authentication failed.\" }";
+    else echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"Authentication failed. Could not authenticate User \"$username\" with Password \"$password\". Are you sure you haven't misspelled anything?\" }";
 }
 else {
-    echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"All GET Parameters must be set, please review the documentation.\" }";
+    echo "{ \"API\":\"2017-01-14/1\", \"msg\":\"All GET Parameters must be set, please review the documentation at https://github.com/lucakiebel/HBBK_API/\" }";
 }
