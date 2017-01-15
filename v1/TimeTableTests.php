@@ -56,7 +56,17 @@ else{
     echo $error_msg;
 }
 
-function test($week, $class, $username, $password){
+/**
+ * TimeTableTests.php test.
+ *
+ * This function is used to test the tests...
+ *
+ * @param $week mixed The desired week offset the timetable should be of.
+ * @param $class mixed The desired class the timetable should be of.
+ * @param $username mixed The Username of the client which should be gotten through either POST or GET.
+ * @param $password mixed The Users Password for Authenticating with hbbk-ilias.de.
+ */
+function test(mixed $week, mixed $class, mixed $username, mixed $password){
     $fields = array(
         'username' => $username,
         'password' => $password
