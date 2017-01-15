@@ -10,30 +10,32 @@ class HTML_Parser
 {
     /**
      * HTML_Parser constructor.
-     * @param String $html
-     * @param String $format
+     * @param String $HTML_to_be_parsed
+     * @param String $Format_it_should_be_parsed_into
      */
-    public function __construct(String $html, String $format){
+    public function __construct(String $HTML_to_be_parsed, String $Format_it_should_be_parsed_into){
         global $html, $format, $xml;
-        $this->$html = $html;
-        $this->$format = $format;
+        $html = $HTML_to_be_parsed;
+        $format = $Format_it_should_be_parsed_into;
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
     }
 
     /**
+     * Parses the given HTML into $format
      * @return string
      */
-    public static function parse(){
+    public function parse(){
         global $html, $xml;
 
-        $html = $xml."\n".$html;
+        //$html = $xml."\n".$html;
 
-        $html = simplexml_load_string($html) or die("Error: Cannot create object");
-        print_r($html);
+
+        $xml = simplexml_load_string($html);
 
         $parsed = $html;
         return (string) $parsed;
     }
+
+
 }
 
-$u = new HTML_Parser("<body><p>Hallo!</p></body>");
