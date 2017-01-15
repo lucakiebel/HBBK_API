@@ -2,7 +2,7 @@
 
 This API can be used to get your current timetable from hbbk-ilias.de without needing to do all the logging in and choosing your schedule and so on, in short, it saves to time and hassle with the other current methods and is completely free of ads 🤑 🤑 🤑.
 
-### Usage
+## Usage
 You can make calls to the API by navigating your browser to https://hbbk.radon.cloud/v1/ and giving it the following GET parameters:
 
 | Parameter 	| Description                                                  	|                                           Possible Value                                           	| From Version 	|
@@ -16,15 +16,15 @@ So that in the end, the URL looks like this: https://hbbk.radon.cloud/v1/?userna
 You may leave out week entirely if you wish to get the current timetable.
 
 
-### Reporting Issues & Requesting Features
+## Reporting Issues & Requesting Features
 If you find any Errors when using the API or want to request a Feature, you can do so by [opening an Issue](https://github.com/lucakiebel/HBBK_API/issues/new). Please include as much information as possible! 💻
 
 
-### Installation
+## Installation
 Read the [Installation Docs](https://github.com/lucakiebel/HBBK_API/blob/website/README.md) in the Website branch.
 
 
-### Todos
+## TODOs
 Take a look at the current [Projects](https://github.com/lucakiebel/HBBK_API/projects)
 
 
