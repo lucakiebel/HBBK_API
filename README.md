@@ -28,6 +28,6 @@ Read the [Installation Docs](https://github.com/lucakiebel/HBBK_API/blob/website
 Take a look at the current [Projects](https://github.com/lucakiebel/HBBK_API/projects)
 
 
-### License
+## License
 
-[The Unlicense](https://github.com/lucakiebel/HBBK_API/LICENSE)
+[The Unlicense](https://github.com/lucakiebel/HBBK_API/blob/master/LICENSE)
