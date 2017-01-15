@@ -25,6 +25,9 @@ Read the [Installation Docs](https://github.com/lucakiebel/HBBK_API/blob/website
 
 
 ### Todos
+Take a look at the current [Projects](https://github.com/lucakiebel/HBBK_API/projects)
 
- - Add Parameter for resulting return (html/JSON)
 
+### License
+
+[The Unlicense](https://github.com/lucakiebel/HBBK_API/LICENSE)
