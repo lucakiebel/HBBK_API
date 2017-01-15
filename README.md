@@ -9,7 +9,7 @@
  
 ##Installation
 
-Get the [API's ZIP](https://github.com/lucakiebel/HBBK_API/website.zip) on your Server.
+Get the [API's ZIP](https://github.com/lucakiebel/HBBK_API/archive/website.zip) on your Server.
 
 With wGet:
 ```sh
