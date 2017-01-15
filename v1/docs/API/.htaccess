@@ -3,3 +3,5 @@
     RemoveHandler .php
     ForceType text/plain
 </FilesMatch>
+
+DirectoryIndex index.html
