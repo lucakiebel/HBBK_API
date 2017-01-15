@@ -31,3 +31,5 @@ $ sudo mv -r HBBK_API/ /var/www/html/API
 ```
 
 After that navigate your browser to http://YOUR-SERVER/API/v1/ and add the needed GET parameters from the [user documentation](https://github.com/lucakiebel/HBBK_API/blob/master/README.md)
+
+To learn more about how to use the API as a backend developer, take a look at the [API Docs](https://hbbk.radon.cloud/v1/docs/API/)
