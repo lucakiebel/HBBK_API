@@ -75,11 +75,16 @@ class HTML_Parser
     }
 
     /**
-     * @param String $html
+     * Takes out the <head> of the input document and puts it back on
+     * @return String
+     * @internal param String $html
      */
-    public function parseIntoHTML(String $html){
+    public function parseIntoHTML(){
+        global $html;
         $head = file_get_contents("head.html");
-
+        $html = substr($html, 496);
+        $html = $head.$html;
+        return $html;
     }
 
 }
