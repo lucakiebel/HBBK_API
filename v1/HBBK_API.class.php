@@ -37,6 +37,8 @@
  * Time: 17:13
  */
 
+include "HTML_Parser.class.php";
+
 /**
  * Class HBBK_API; Wrapper for hbbk-ilias.de as an API.
  *
@@ -214,10 +216,10 @@ class HBBK_API
      *
      * As of Version 2017-01-14/1 this function doesn't really do anything, though in future Versions it will be used to get the Timetable in a user desired format.
      *
-     * @param $html mixed The HTML content to be parsed, in the future.
+     * @param $html String The HTML content to be parsed, in the future.
      * @return String
      */
-    private static function parseHTML(mixed $html){
+    private static function parseHTML(String $html){
         //TODO: Parse $html and return a JSONified String of it
         $t = new HTML_Parser($html, "HTML");
         return (string) $t->parseIntoHTML();
