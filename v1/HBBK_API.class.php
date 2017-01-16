@@ -62,7 +62,7 @@ class HBBK_API
      * HBBK_API authenticator.
      *
      * Makes a call to hbbk-ilias.de POSTing the client's password, which is the parameter, and the username, which was a parameter of the constructor, to authenticate the user in order to use the API.
-     * Returns TRUE if the authentication was successful and FALSE if it wasn't, in that case it should be retried.
+     * Returns TRUE if the authentication was successful and FALSE if it wasn't, in that case the user should be told that he may have entered wrong initials.
      *
      * @param String $password The Users Password for Authenticating with hbbk-ilias.de.
      * @return bool

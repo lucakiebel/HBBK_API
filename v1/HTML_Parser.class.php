@@ -47,6 +47,7 @@ class HTML_Parser
 {
     /**
      * HTML_Parser constructor.
+     *
      * @param String $HTML_to_be_parsed
      * @param String $Format_it_should_be_parsed_into
      */
@@ -73,6 +74,13 @@ class HTML_Parser
         return (string) $parsed;
     }
 
+    /**
+     * @param String $html
+     */
+    public function parseIntoHTML(String $html){
+        $head = file_get_contents("head.html");
+
+    }
 
 }
 
