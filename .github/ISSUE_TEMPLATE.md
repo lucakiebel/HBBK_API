@@ -1,4 +1,7 @@
 <!--- Provide a general summary of the issue in the Title above -->
+<!--- Before reporting Errors about failed logins, please check twice, that your password is correct. -->
+<!--- It has to be then one you use to authenticate with hbbk-ilias.de -->
+<!--- If you want to submit a feature request, you  -->
 
 ## Context
 <!--- Provide a more detailed introduction to the issue itself, and why you consider it to be a bug -->
@@ -29,7 +32,3 @@
 * Environment name and version (e.g. Chromium 42):
 * Operating System and version (desktop or mobile):
 * Link to your project:
-
-## Do you still like the project though?
- - [x] of course, I still love it!
- - [ ] nah, the Bug kills it for me...
