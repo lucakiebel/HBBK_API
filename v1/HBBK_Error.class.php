@@ -1,6 +1,7 @@
 <?php
+
 /**
- * File TimeTable.php the main Interface implementing the API Wrapper Class
+ * File HBBK_Error.class.php; Class for echoing out errors
  *
  * License Note:
  *|-----------------------------------------------------------------------------|
@@ -31,30 +32,27 @@
  *| For more information, please contact me at https://luca-kiebel.de/contact/  |
  *|-----------------------------------------------------------------------------|
  *
- * Created by PhpStorm.
+ *
  * User: luckie
- * Date: 14.01.17
- * Time: 17:21
+ * Date: 21.01.17
+ * Time: 14:01
  */
-
-include "HBBK_API.class.php";
-
-//filter the input for authenticating and choosing the timetable
-$week = (string) filter_input(INPUT_GET, 'week');
-$class = (string) filter_input(INPUT_GET, 'class');
-$username = filter_input(INPUT_GET, 'username');
-$password = filter_input(INPUT_GET, 'password');
-
-if (isset($username, $class, $password)){
-
-    //create a new Instance of the API, set the Username
-    $ilias = new HBBK_API($username);
-
-    //authenticate the User with Ilias, if password is correct, proceed
-    if ($ilias::authenticate($password)){
-        $timetable = $ilias::getTimetable($week, $class);
-        echo $timetable;
+class HBBK_Error
+{
+    /**
+     * HBBK_Error constructor.
+     * @param String $class The Class of the Error for quick fixing
+     * @param String $msg The Message that describes the Error
+     */
+    public function __construct(String $class, String $msg){
+        global $array;
+        $version = "2017-01-21/1.2";
+        $array = ["API" => $version, "error" => ["class" => $class, "message" => $msg]];
     }
-    else echo new HBBK_Error("12", "Authentication failed. Could not authenticate User \"$username\" with Password \"$password\". Are you sure you haven't misspelled anything?");
+
+    public function __toString(){
+        global $array;
+        $array = json_encode($array);
+        return $array;
+    }
 }
-else echo new HBBK_Error("13", "All GET Parameters must be set, please review the documentation at github.com/lucakiebel/HBBK_API/");

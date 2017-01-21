@@ -38,6 +38,7 @@
  */
 
 include "HTML_Parser.class.php";
+include "HBBK_Error.class.php";
 
 /**
  * Class HBBK_API; Wrapper for hbbk-ilias.de as an API.
