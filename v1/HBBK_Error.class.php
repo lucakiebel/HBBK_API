@@ -50,6 +50,10 @@ class HBBK_Error
         $array = ["API" => $version, "error" => ["class" => $class, "message" => $msg]];
     }
 
+    /**
+     * HBBK_Error toString Function.
+     * @return string
+     */
     public function __toString(){
         global $array;
         $array = json_encode($array);
