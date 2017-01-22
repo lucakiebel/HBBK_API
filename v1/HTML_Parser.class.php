@@ -76,13 +76,15 @@ class HTML_Parser
 
     /**
      * Takes out the <head> of the input document and puts it back on
+     * @param int $Header_Length The length of the header
      * @return String
      * @internal param String $html
      */
-    public function parseIntoHTML(){
+    public function parseIntoHTML(int $Header_Length){
         global $html;
+        $len = $Header_Length;
         $head = file_get_contents("head.html");
-        $html = substr($html, 496);
+        $html = substr($html, $len);
         $html = $head.$html;
         return $html;
     }

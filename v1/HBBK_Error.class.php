@@ -2,7 +2,8 @@
 
 /**
  * File HBBK_Error.class.php; Class for echoing out errors
- * Usage: "echo new HBBK_Error($class, $msg)" or "return new HBBK_Error($class, $msg)"
+ * Usage:
+ *      "echo new HBBK_Error($class, $msg)" or "return new HBBK_Error($class, $msg)"
  *
  * License Note:
  *|-----------------------------------------------------------------------------|

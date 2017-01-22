@@ -228,7 +228,7 @@ class HBBK_API
     private static function parseHTML(String $html){
         //TODO: Parse $html and return a JSONified String of it
         $t = new HTML_Parser($html, "HTML");
-        return (string) $t->parseIntoHTML();
+        return (string) $t->parseIntoHTML(496);
     }
 
     /**
