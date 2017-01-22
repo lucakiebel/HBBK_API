@@ -1,6 +1,9 @@
 <?php
 /**
  * File HBBK_API.class.php; Wrapper for hbbk-ilias.de as an API.
+ * Usage:
+ *      Initialize the Object with your username, then you should run $obj::authenticate() and
+ *      authenticate with your password. If that returns true you can go ahead and use the Methods to your liking.
  *
  * License Note:
  *|-----------------------------------------------------------------------------|
