@@ -40,6 +40,7 @@
  * Time: 17:13
  */
 
+require_once "config.php";
 include "HTML_Parser.class.php";
 include "HBBK_Error.class.php";
 
@@ -86,8 +87,11 @@ class HBBK_API
         foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
         rtrim($fields_string, '&');
 
+        /**
+         * Log $username in with curl
+         */
         $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL, 'http://hbbk-ilias.de/ilias.php?lang=de&cmd=post&cmdClass=ilstartupgui&cmdNode=99&baseClass=ilStartUpGUI&rtoken=');
+        curl_setopt($ch,CURLOPT_URL, URL_LOGIN);
         curl_setopt($ch,CURLOPT_POST, count($fields));
         curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -95,7 +99,12 @@ class HBBK_API
         $result = curl_exec($ch);
         curl_close($ch);
 
-        $ch = curl_init('http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/default.htm');
+
+        /**
+         * Test whether login was successful
+         */
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, URL_CHECK);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
         $timetable = curl_exec($ch);
@@ -125,15 +134,14 @@ class HBBK_API
 
         $url = 'http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/'.$week.'/c/c00'.$class.'.htm';
 
-        $ch = curl_init($url);
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_COOKIEFILE, 'userData/cookies/cookie-'.$username.'.txt');
         $timetable = curl_exec($ch);
         curl_close($ch);
 
-        $timetable = self::parseHTML($timetable);
-
-        return $timetable;
+        return self::parseHTML($timetable);
     }
 
     /**
@@ -220,7 +228,7 @@ class HBBK_API
     /**
      * HBBK_API parseHTML.
      *
-     * As of Version 2017-01-14/1 this function doesn't really do anything, though in future Versions it will be used to get the Timetable in a user desired format.
+     * @version 2017-01-21/1.2; Parser now returns the transferred HTML with a custom header in head.html
      *
      * @param $html String The HTML content to be parsed, in the future.
      * @return String
@@ -256,12 +264,12 @@ class HBBK_API
      */
     public static function debug(){
         global $username, $week, $class, $url;
-        $debug = '{ "API":"2017-01-14/1", "debug":"[{
+        $debug = '{"API":"'.VERSION.'","debug":{
         "username":"'.$username.'",
         "week":"'.$week.'",
         "class":"'.$class.'",
         "url":"'.$url.'"
-        }]" }';
+        }}';
         return $debug;
     }
 }

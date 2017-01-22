@@ -1,9 +1,6 @@
 <?php
-
 /**
- * File HBBK_Error.class.php; Class for echoing out errors
- * Usage:
- *      "echo new HBBK_Error($class, $msg)" or "return new HBBK_Error($class, $msg)"
+ * File config.php; Configure superglobal settings
  *
  * License Note:
  *|-----------------------------------------------------------------------------|
@@ -34,36 +31,26 @@
  *| For more information, please contact me at https://luca-kiebel.de/contact/  |
  *|-----------------------------------------------------------------------------|
  *
- *
  * User: luckie
- * Date: 21.01.17
- * Time: 14:01
+ * Date: 22.01.17
+ * Time: 17:17
  */
-
-require_once "config.php";
 
 /**
- * Class HBBK_Error
+ * The current Version of this API Wrapper
+ * @def VERSION
  */
-class HBBK_Error
-{
-    /**
-     * HBBK_Error constructor.
-     * @param String $class The Class of the Error for quick fixing
-     * @param String $msg The Message that describes the Error
-     */
-    public function __construct(String $class, String $msg){
-        global $array;
-        $array = ["API" => VERSION, "error" => ["class" => $class, "message" => $msg]];
-    }
+define("VERSION", "2017-01-21/1.2");
 
-    /**
-     * HBBK_Error toString Function.
-     * @return string
-     */
-    public function __toString(){
-        global $array;
-        $array = json_encode($array);
-        return $array;
-    }
-}
+/**
+ * The Login URL for curl-POST
+ * @def URL_LOGIN
+ */
+define("URL_LOGIN", "http://hbbk-ilias.de/ilias.php?lang=de&cmd=post&cmdClass=ilstartupgui&cmdNode=99&baseClass=ilStartUpGUI&rtoken=");
+
+/**
+ * The Check URL for getting login-validity as boolean
+ * @def URL_CHECK
+ */
+define("URL_CHECK", 'http://hbbk-ilias.de/data/HBSeLearn/lm_data/lm_62636/default.htm');
+
