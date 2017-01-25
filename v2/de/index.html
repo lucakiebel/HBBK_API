@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HBBK Stundenplan</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="hbbk-login">
+    <h4>Bitte melde dich mit deinen Ilias Anmeldedaten aus der Schule an:</h4>
+    <form>
+        <label id="nutzer">Nutzername: <input type="text" name="username" id="username" required autofocus autocomplete="on"></label>
+        <label id="passwort">Passswort: <input type="password" name="password" id="password" required autocomplete="on"></label>
+        <h4>Bitte wähle deine Klasse aus:</h4>
+        <label id="klasse">
+            <select name="class" id="class" required autocomplete="on">
+                <option value="GIA2A">GIA2A</option>
+                <option value="GYM2A">GYM2A</option>
+            </select>
+        </label>
+    </form>
+</div>
+<div class="hbbk-tt" style="display: none;">
+
+</div>
+<div class="week-chooser" style="display: block;">
+    <form>
+        <h4>Bitte wähle die Woche aus:</h4>
+        <label id="woche">
+            <select name="week" id="week" required>
+                <option value="prev">Letzte</option>
+                <option value="this">Diese</option>
+                <option value="next">Nächste</option>
+            </select>
+        </label>
+    </form>
+    <button id="send">Send</button>
+</div>
+<script>$.ready(function () {
+    var $username=$('#username').value;
+    var $password=$('#password').value;
+    var $week=$('#week').value;
+    var $class=$('#class').value;
+    $('#send').click(function(){
+        var hbbk = $('.hbbk-tt');
+        hbbk.innerHTML = getTimetable($class, $week, $username, $password);
+        hbbk.show();
+    });});</script>
+<script src="app.js"></script>
+</body>
+</html>
