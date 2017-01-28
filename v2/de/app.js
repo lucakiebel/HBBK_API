@@ -2,7 +2,8 @@
  * Created by luckie on 25.01.17.
  */
 function getTimetable(klasse, woche, nutzername, passwort) {
-    $.post("https://hbbk.radon.cloud/v1/WebInterface.php",
+    console.log("Funktion aufgerufen");
+    $.post("../../v1/WebInterface.php",
         {
             username: nutzername,
             password: passwort,
@@ -10,7 +11,7 @@ function getTimetable(klasse, woche, nutzername, passwort) {
             class: klasse
         },
         function(data){
-            alert(data);
+            console.log(data);
             return data;
         });
 }
