@@ -1,6 +1,6 @@
 <?php
 /**
- * File WebInterface.php the Interface implementing the API Wrapper Class for the Webinterface with login
+ * File Autenticate.php
  *
  * License Note:
  *|-----------------------------------------------------------------------------|
@@ -32,28 +32,15 @@
  *|-----------------------------------------------------------------------------|
  *
  * User: luckie
- * Date: 25.01.17
- * Time: 20:09
+ * Date: 05.02.17
+ * Time: 15:40
  */
 
 include "HBBK_API.class.php";
 
-//filter the input for authenticating and choosing the timetable
-$week = (string) filter_input(INPUT_POST, 'week');
-$class = (string) filter_input(INPUT_POST, 'class');
-$username = (string) filter_input(INPUT_POST, 'username');
-$password = (string) filter_input(INPUT_POST, 'password');
+$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 
-if (isset($username, $class, $password)){
+$ilias = new HBBK_API($username);
 
-    //create a new Instance of the API, set the Username
-    $ilias = new HBBK_API($username);
-
-    //authenticate the User with Ilias, if password is correct, proceed
-    if ($ilias::authenticate($password)){
-        $timetable = $ilias::getTimetable($week, $class);
-        echo $timetable;
-    }
-    else echo "false";
-}
-else echo "false";
+echo $ilias::authenticate($password);
