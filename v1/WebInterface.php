@@ -41,8 +41,8 @@ include "HBBK_API.class.php";
 //filter the input for authenticating and choosing the timetable
 $week = (string) filter_input(INPUT_POST, 'week');
 $class = (string) filter_input(INPUT_POST, 'class');
-$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-$password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+$username = (string) filter_input(INPUT_POST, 'username');
+$password = (string) filter_input(INPUT_POST, 'password');
 
 if (isset($username, $class, $password)){
 
