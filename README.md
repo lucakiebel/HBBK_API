@@ -1,6 +1,6 @@
 # HBBK Timetable API
 
-This API can be used to get your current timetable from hbbk-ilias.de without needing to do all the logging in and choosing your schedule and so on, in short, it saves to time and hassle with the other current methods and is completely free of ads 🤑 🤑 🤑.
+This API can be used to get your current timetable from hbbk-ilias.de without needing to do all the logging in and choosing your schedule and so on, in short, it saves time and hassle with the other current methods and is completely free of ads 🤑 🤑 🤑.
 
 ## Usage
 You can make calls to the API by navigating your browser to https://hbbk.radon.cloud/v1/ and giving it the following GET parameters:
